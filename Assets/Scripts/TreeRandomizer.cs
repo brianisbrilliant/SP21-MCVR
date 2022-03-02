@@ -18,10 +18,4 @@ public class TreeRandomizer : MonoBehaviour
         rend.material.color = newColor;
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

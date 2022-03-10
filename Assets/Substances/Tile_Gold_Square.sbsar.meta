@@ -17,8 +17,9 @@ ScriptedImporter:
     generateAllOutputs: 0
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://Tile_Gold_Square\" label=\"\" >\n  <presetinput
-      identifier=\"$outputsize\" uid=\"3453006610\" type=\"8\" value=\"10,10\" />\n
-      </sbspreset>\n"
+      identifier=\"$outputsize\" uid=\"3453006610\" type=\"8\" value=\"11,11\" />\n 
+      <presetinput identifier=\"$randomseed\" uid=\"2594350400\" type=\"4\" value=\"6988\"
+      />\n </sbspreset>\n"
     shaderName: Standard
     materialProperties:
       shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
@@ -79,7 +80,7 @@ ScriptedImporter:
       - name: _DstBlend
         float: 0
       - name: _GlossMapScale
-        float: 1
+        float: 0.981
       - name: _Glossiness
         float: 0.5
       - name: _GlossyReflections
@@ -89,7 +90,7 @@ ScriptedImporter:
       - name: _Mode
         float: 0
       - name: _OcclusionStrength
-        float: 0.775
+        float: 0.231
       - name: _Parallax
         float: 0.005
       - name: _SmoothnessTextureChannel
@@ -224,8 +225,8 @@ ScriptedImporter:
     - label: Default
       bOverride: 0
       bLockRatio: 1
-      textureWidth: 1024
-      textureHeight: 1024
+      textureWidth: 2048
+      textureHeight: 2048
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 1

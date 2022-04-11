@@ -10,6 +10,8 @@ public class AnimateWhenNear : MonoBehaviour
     public string closeTriggerName = "OnEnter";
     public string farTriggerName = "OnExit";
 
+    public AudioSource aud;
+
     public Transform target;
     public float close = 3f, far = 5f;
 
@@ -20,6 +22,9 @@ public class AnimateWhenNear : MonoBehaviour
         if(anim == null) {
             anim = GetComponent<Animator>();
         }
+        if(aud == null) {
+            aud = GetComponent<AudioSource>();
+        }
     }
 
 
@@ -28,12 +33,14 @@ public class AnimateWhenNear : MonoBehaviour
 
         if(distance < close && !closeTriggered) {
             anim.SetTrigger(closeTriggerName);
+            if(aud != null) aud.Play();
             closeTriggered = true;
             farTriggered = false;
         }
 
         if(distance > far && !farTriggered) {
             anim.SetTrigger(farTriggerName);
+            if(aud != null) aud.Stop();
             farTriggered = true;
             closeTriggered = false;
         }

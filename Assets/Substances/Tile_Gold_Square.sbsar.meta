@@ -72,7 +72,7 @@ ScriptedImporter:
         offset: {x: 0, y: 0}
       floats:
       - name: _BumpScale
-        float: 3
+        float: 0.57
       - name: _Cutoff
         float: 0.5
       - name: _DetailNormalMapScale
@@ -90,7 +90,7 @@ ScriptedImporter:
       - name: _Mode
         float: 0
       - name: _OcclusionStrength
-        float: 0.231
+        float: 0.212
       - name: _Parallax
         float: 0.005
       - name: _SmoothnessTextureChannel

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -114,18 +114,13 @@ public class BFGun : MonoBehaviour
 
     }
 
-    IEnumerator WaitOld() {
-        canShoot = false;
-        yield return new WaitForSeconds(0.5f);
-        canShoot = true;
-    }
-
     IEnumerator Wait() {
         if(currentClip <= 0) {
             chargeIndicator.text = "Reload!";
             chargeIndicator.color = colors[0];
             yield break;
         }
+        
         canShoot = false;
         float timer = 0;
         while(timer < fireInterval) {

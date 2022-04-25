@@ -22,6 +22,10 @@ public class ButtonAnimControl : MonoBehaviour
     void OnButtonDown(Hand fromHand) {
         if(anim != null) {
             anim.SetTrigger(triggerName);
+
+            // do stuff here
+            // aud.PlayOneShot();
+            // Instantiate(prefab, position, rotation);
         } else {
             Debug.Log("There is no animator attached to this script!");
         }

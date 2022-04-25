@@ -31,8 +31,6 @@ public class BFGun : MonoBehaviour
     public Color[] colors;
 
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -109,9 +107,6 @@ public class BFGun : MonoBehaviour
             // you have no more ammo
             ammoDisplay.text = "Out of Ammo";
         }
-
-        
-
     }
 
     IEnumerator Wait() {

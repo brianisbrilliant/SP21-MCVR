@@ -12,6 +12,7 @@ public class ColorCube : MonoBehaviour
     // this is the button that you will press on your controller.
     // it is an abstract button so that it'll work on any controller.
     public SteamVR_Action_Boolean colorAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("default", "InteractUI");
+    public bool canDuplicate = false;
 
     private Interactable interactable;      // the interactable component knows when it has been picked up
     private SteamVR_Input_Sources hand;     // the controller that picked up this component.
@@ -20,6 +21,8 @@ public class ColorCube : MonoBehaviour
     void Start()
     {
         mat = this.GetComponent<Renderer>().material;
+        // to test if the materials is working correctly
+        ChangeColor();
         interactable = this.GetComponent<Interactable>();
     }
 
@@ -29,11 +32,18 @@ public class ColorCube : MonoBehaviour
         if(interactable.attachedToHand) {
             hand = interactable.attachedToHand.handType;
 
-            if(colorAction[hand].stateDown) ChangeColor();      // changes color once per click.
+            if(colorAction[hand].stateDown) {
+                ChangeColor();      // changes color once per click.
+                if(canDuplicate) Duplicate();
+            }
         }
     }
 
     void ChangeColor() {
         mat.color = Random.ColorHSV();
+    }
+
+    void Duplicate() {
+        Instantiate(this.gameObject, this.transform.position, Random.rotation);
     }
 }
